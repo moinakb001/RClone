@@ -11,7 +11,43 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
 <head>
+<body ng-app='myApp'>
+    <div ng-controller='postCtrl as postScope'>
+    <h1>Posts</h1>
+        <ul class='list-group'>
+            
+    <li class='list-group-item' ng-repeat='post in postScope.posts'><strong>@{{post.username}}</strong><span> {{post.body}}</span>
+            </li>
+        </ul>
+    <strong>@{{postScope.posts[0].username}}</strong><input class='form-control' ng-model='postScope.postBody'>
+    <button class='btn btn-default' ng-click='postScope.addPost()'>Post</button>
+    </div>
+</body>
+    
+<script>
+angular.module('myApp', [])
+    .controller('postCtrl',function(){
+    var postScope = this;
+    //later change this to a get api
+    postScope.posts = [
+        {username: 'exampleName',
+         body: 'exampleBody'
+        },
+    ];
+    postScope.addPost = function() {
+    if(postScope.postBody){
+        //change to a post API
+    postScope.posts.unshift({username:'exampleName', body:postScope.postBody});
+    postScope.postBody = null;
+    }
+    };
+    
+    
+})
 
+</script>
+
+    
 
 
 </html>
