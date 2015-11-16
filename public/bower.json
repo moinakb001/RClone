@@ -1,0 +1,25 @@
+{
+  "name": "RClone",
+  "homepage": "https://github.com/themodder666/RClone",
+  "authors": [
+    "Moinak Bhattacharyya <mb.totaldomination@gmail.com>"
+  ],
+  "description": "Reddit Clone Deps",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "socket.io": "~1.3.7"
+  }
+}
